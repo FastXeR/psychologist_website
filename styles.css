@@ -90,7 +90,7 @@ h1 em, h2 em { color: var(--clay); font-weight: 400; }
 .hero h1 em { color: var(--sun); }
 .hero__intro { max-width: 620px; margin-bottom: 20px; color: rgba(255,255,255,.87); font-size: 14px; }
 .hero__facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; max-width: 680px; margin: 0 0 25px; padding: 0; list-style: none; }
-.hero__facts li { border-top: 1px solid rgba(255,255,255,.25); padding: 9px 0; color: rgba(255,255,255,.82); font-size: 10px; line-height: 1.45; }
+.hero__facts li { border-top: 1px solid rgba(255,255,255,.25); padding: 9px 0; color: rgba(255,255,255,.82); font-size: 20px; line-height: 1.45; }
 .button { display: inline-flex; min-height: 54px; align-items: center; justify-content: space-between; gap: 30px; padding: 0 20px; font-size: 12px; transition: background-color .2s ease, color .2s ease; }
 .button span { font-size: 18px; }
 .button--light { background: var(--paper); color: var(--ink); }
