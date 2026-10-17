@@ -24,6 +24,22 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeMenu();
 });
 
+const contactForm = document.querySelector("[data-contact-form]");
+const formStatus = document.querySelector("[data-form-status]");
+
+contactForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const formData = new FormData(contactForm);
+  const message = [
+    `Здравствуйте, Наталья. Меня зовут ${formData.get("name")}.`,
+    `Мой телефон: ${formData.get("phone")}.`,
+    `Мой запрос: ${formData.get("message")}`,
+  ].join("\n");
+
+  formStatus.textContent = "Открываем приложение сообщений. Проверьте текст и отправьте SMS.";
+  window.location.href = `sms:+79684822207?body=${encodeURIComponent(message)}`;
+});
+
 const year = document.querySelector("[data-current-year]");
 year.textContent = new Date().getFullYear();
 
@@ -37,7 +53,7 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
     });
   }, { threshold: 0.12 });
 
-  document.querySelectorAll(".section-heading, .topics__heading, .topic-list li, .approach__grid, .service-row, .faq-list details").forEach((element) => {
+  document.querySelectorAll(".section-heading, .topics__heading, .topic-list li, .approach__grid, .service-row, .price-row, .materials__note, .reviews blockquote, .contact-form").forEach((element) => {
     element.setAttribute("data-reveal", "");
     revealObserver.observe(element);
   });
